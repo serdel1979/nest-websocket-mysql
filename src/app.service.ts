@@ -5,9 +5,9 @@ import { Chat } from './chat/entity/chat.entity';
 
 @Injectable()
 export class AppService {
-    constructor(
-      @InjectRepository(Chat) private chatRepository: Repository<Chat>,
-    ) { }
+  constructor(
+    @InjectRepository(Chat) private chatRepository: Repository<Chat>,
+  ) { }
   async createMessage(chat: Chat): Promise<Chat> {
     return await this.chatRepository.save(chat);
   }

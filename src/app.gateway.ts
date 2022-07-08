@@ -23,7 +23,7 @@ export class AppGateway
 
   @SubscribeMessage('sendMessage')
   async handleSendMessage(client: Socket, payload: Chat): Promise<void> {
-    await this.appService.createMessage(payload);
+    let result = await this.appService.createMessage(payload);
     this.server.emit('recMessage', payload);
   }
 
